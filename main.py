@@ -3,8 +3,9 @@ with open('main.html', 'r') as file:
     content = file.read()
     # print(content)
     soup = BeautifulSoup(content, 'lxml')
-    tags = soup.find_all('ul')
-    print(tags)
+    tags = soup.find_all('body')
+    # print(tags)
     for fruits in tags:
-        print(fruits.text)
+        juice = fruits.h5.text.split()[-1]
+        print(juice)
     # print(soup.prettify())
